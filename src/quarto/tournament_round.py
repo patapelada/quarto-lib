@@ -1,5 +1,5 @@
-from lib.arena import Arena
-from lib.contracts.informal_agent_interface import InformalAgentInterface
+from quarto.arena import Arena
+from quarto.contracts.informal_agent_interface import InformalAgentInterface
 
 
 class TournamentRound:

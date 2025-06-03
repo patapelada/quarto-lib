@@ -1,11 +1,11 @@
 [project]
 name = "quarto-lib"
-version = "0.1.3"
+version = "0.1.4"
 description = "Common library for Quarto-Games projects."
 authors = [
     {name = "patapelada", email = "77882237+patapelada@users.noreply.github.com"},
 ]
-dependencies = []
+dependencies = ["pytest>=8.4.0"]
 requires-python = "==3.13.*"
 readme = "README.md"
 license = "MIT"

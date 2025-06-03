@@ -1,8 +1,8 @@
 from typing import Optional, Tuple
 
-from lib.contracts.game_state import GameState
-from lib.types.cell import Cell
-from lib.types.piece import Piece
+from quarto.contracts.game_state import GameState
+from quarto.types.cell import Cell
+from quarto.types.piece import Piece
 
 
 class InformalAgentInterface:

@@ -1,10 +1,10 @@
 import logging
 from typing import Optional, Tuple
 
-from lib.contracts.game_state import GameState
-from lib.contracts.informal_agent_interface import InformalAgentInterface
-from lib.game import Game
-from lib.types.cell import Cell
+from quarto.contracts.game_state import GameState
+from quarto.contracts.informal_agent_interface import InformalAgentInterface
+from quarto.game import Game
+from quarto.types.cell import Cell
 
 logger = logging.getLogger(__name__)
 

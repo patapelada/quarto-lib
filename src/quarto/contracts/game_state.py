@@ -1,8 +1,8 @@
 from typing import List, Optional
 
-from lib.game import Game
-from lib.types.cell import Cell
-from lib.types.piece import Piece
+from quarto.game import Game
+from quarto.types.cell import Cell
+from quarto.types.piece import Piece
 
 
 class GameState:
