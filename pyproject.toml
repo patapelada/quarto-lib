@@ -1,6 +1,6 @@
 [project]
 name = "quarto-lib"
-version = "0.1.2"
+version = "0.1.3"
 description = "Common library for Quarto-Games projects."
 authors = [
     {name = "patapelada", email = "77882237+patapelada@users.noreply.github.com"},
