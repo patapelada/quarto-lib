@@ -1,4 +1,4 @@
-name: Test Python Package
+name: Test
 
 on: [push]
 
@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.13"]
+        python-version: ["3.11", "3.12", "3.13"]
 
     steps:
       - name: Checkout code
@@ -20,6 +20,8 @@ jobs:
 
       - name: Install PDM
         run: pip install pdm
+      - name: Validate pyproject.toml
+        run: pdm check
       - name: Install dependencies
         run: |
           pdm install
