@@ -1,15 +1,20 @@
 [project]
 name = "quarto-lib"
-version = "0.2.1"
+version = "0.2.2"
 description = "Common library for Quarto-Games projects."
 authors = [
     {name = "patapelada", email = "77882237+patapelada@users.noreply.github.com"},
 ]
-dependencies = ["pytest>=8.4.0"]
+dependencies = []
 requires-python = "==3.13.*"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICEN[CS]E*"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/patapelada/quarto-lib"
@@ -24,3 +29,5 @@ distribution = true
 
 [tool.pdm.build]
 excludes = ["tests"]
+
+
