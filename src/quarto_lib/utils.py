@@ -1,6 +1,6 @@
 from typing import List, Optional, Sequence, Tuple
 
-from quarto.types.piece import Piece
+from quarto_lib.types.piece import Piece
 
 
 def common_characteristics(line: Sequence[Optional[Piece]]) -> List[Tuple[int, int]]:

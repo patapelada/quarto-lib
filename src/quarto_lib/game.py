@@ -1,8 +1,8 @@
 from typing import Literal, Optional
 
-from quarto.types.cell import Cell
-from quarto.types.piece import Piece
-from quarto.utils import common_characteristics
+from quarto_lib.types.cell import Cell
+from quarto_lib.types.piece import Piece
+from quarto_lib.utils import common_characteristics
 
 
 class Game:
