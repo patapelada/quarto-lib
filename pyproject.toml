@@ -1,6 +1,6 @@
 [project]
-name = "quarto-lib"
-version = "0.2.2"
+name = "quarto"
+version = "0.2.3"
 description = "Common library for Quarto-Games projects."
 authors = [
     {name = "patapelada", email = "77882237+patapelada@users.noreply.github.com"},
@@ -30,4 +30,7 @@ distribution = true
 [tool.pdm.build]
 excludes = ["tests"]
 
+[tool.pdm.version]
+source = "file"
+path = "quarto/_version.py"
 
