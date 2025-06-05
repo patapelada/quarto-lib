@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.2] - 2025-06-05
+
+### 🐛 Bug Fixes
+
+- Combine release and publish
+
 ## [2.1.1] - 2025-06-05
 
 ### 🐛 Bug Fixes
