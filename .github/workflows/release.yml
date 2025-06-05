@@ -33,7 +33,7 @@ jobs:
       - name: Generate changelog
         id: git-cliff
         run: |
-          git-cliff --verbose --bump -o CHANGELOG.md
+          pdm run git-cliff --verbose --bump -o CHANGELOG.md
       - name: Set tag env variable
         run: echo "NEW_TAG=$(git cliff --bumped-version)" >> $GITHUB_ENV
 
