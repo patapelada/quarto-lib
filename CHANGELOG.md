@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.6] - 2025-06-05
+
+### 🐛 Bug Fixes
+
+- Split release and publish
+
+## [2.1.5] - 2025-06-05
+
+### 🐛 Bug Fixes
+
+- Ommit changelog
+
 ## [2.1.4] - 2025-06-05
 
 ### 🐛 Bug Fixes
