@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.1] - 2025-06-05
+
+### 🐛 Bug Fixes
+
+- Try changed publish workflow
+
 ## [2.1.0] - 2025-06-05
 
 ### 🚀 Features
