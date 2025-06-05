@@ -30,21 +30,21 @@ jobs:
       - name: Install ci dependencies
         run: pdm install -G ci
 
-      - name: Generate changelog
-        id: git-cliff
-        run: |
-          pdm run git-cliff --verbose --bump -o CHANGELOG.md
+      # - name: Generate changelog
+      #   id: git-cliff
+      #   run: |
+      #     pdm run git-cliff --verbose --bump -o CHANGELOG.md
       - name: Set tag env variable
         run: echo "NEW_TAG=$(pdm run git-cliff --bumped-version)" >> $GITHUB_ENV
 
-      - name: Commit to main
-        run: |
-          git checkout main
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add CHANGELOG.md
-          git commit -m "Update changelog"
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
+      # - name: Commit to main
+      #   run: |
+      #     git checkout main
+      #     git config user.name github-actions
+      #     git config user.email github-actions@github.com
+      #     git add CHANGELOG.md
+      #     git commit -m "Update changelog"
+      #     git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
       - name: Upload the release
         uses: softprops/action-gh-release@v2
         with:
