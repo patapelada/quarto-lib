@@ -10,7 +10,6 @@ name: Publish
 
 on:
   release:
-    types: [published]
 
 permissions:
   contents: read
