@@ -1,6 +1,6 @@
 [project]
 name = "quarto-lib"
-version = "0.3.0"
+dynamic = ["version"]
 description = "Common library for Quarto-Games projects."
 authors = [
     {name = "patapelada", email = "77882237+patapelada@users.noreply.github.com"},
@@ -8,12 +8,14 @@ authors = [
 dependencies = []
 requires-python = "==3.13.*"
 readme = "README.md"
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
+license = { text = "MIT" }
 
 [dependency-groups]
 dev = [
     "pytest>=8.4.0",
+]
+ci = [
+    "git-cliff>=2.9.1",
 ]
 
 [project.urls]
@@ -34,6 +36,8 @@ test = "pytest"
 excludes = ["tests"]
 
 [tool.pdm.version]
-source = "file"
-path = "quarto/_version.py"
+source = "scm"
 
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "node-and-date"

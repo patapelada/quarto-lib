@@ -2,10 +2,10 @@
 # It is not intended for manual editing.
 
 [metadata]
-groups = ["default", "dev"]
+groups = ["default", "ci", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:736c1c0a3ef99764b7864f7b6b7c45315ade31904e2afe60fb40783d4c5e716e"
+content_hash = "sha256:67e2e7e72ea497e43be980ace56bc0dcc25c58fc9552478a7c848745708cf001"
 
 [[metadata.targets]]
 requires_python = "==3.13.*"
@@ -20,6 +20,25 @@ marker = "sys_platform == \"win32\""
 files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
+]
+
+[[package]]
+name = "git-cliff"
+version = "2.9.1"
+requires_python = ">=3.7"
+summary = "A highly customizable changelog generator ⛰️"
+groups = ["ci"]
+files = [
+    {file = "git_cliff-2.9.1-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:220620392ccd6c12a49f816baaea530c32d96b54fce0ebdb7b688b4ba38a0627"},
+    {file = "git_cliff-2.9.1-py3-none-macosx_11_0_arm64.whl", hash = "sha256:f0790924301176bcf6cab274d4d8b791ffc6791a6541929c29a2c81a10ca0d82"},
+    {file = "git_cliff-2.9.1-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:74afc8b388f32f4661e81c758218578cd7fef36fcc60ffe035027f8eb7b9f9c6"},
+    {file = "git_cliff-2.9.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7cee37c70b0ce28d39ad64bdc8eb9d09e415722fd040f61362c5a8c0a85a5161"},
+    {file = "git_cliff-2.9.1-py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:555493177f69b4471996f3a80c1f05c3203789080dde96c7b5a05f05aa3f7c49"},
+    {file = "git_cliff-2.9.1-py3-none-manylinux_2_5_i686.manylinux1_i686.whl", hash = "sha256:45dfefb7f4589fa73a8ae95bfadb233988f64098a08ecd3724334ae58121e004"},
+    {file = "git_cliff-2.9.1-py3-none-manylinux_2_5_x86_64.manylinux1_x86_64.whl", hash = "sha256:067a5112999bdb917dcd9cd4b195f32cb0fcd1a0161035f443c02a3536252727"},
+    {file = "git_cliff-2.9.1-py3-none-win32.whl", hash = "sha256:bd15d7a5b6c69546454fd5f89b091e6210fa9c24abc5c0d86c2662b7896ec55f"},
+    {file = "git_cliff-2.9.1-py3-none-win_amd64.whl", hash = "sha256:840f02dff8adcaecb3dd76bb01cea947633b71341cf42716965d3611f3f315d9"},
+    {file = "git_cliff-2.9.1.tar.gz", hash = "sha256:5b9e69b29f076984ebf88489bddedd45c87f54ad354866e7fc031d87a7686a25"},
 ]
 
 [[package]]
