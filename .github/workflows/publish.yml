@@ -1,65 +1,19 @@
-name: Release and Publish
+name: Publish
 
-# on:
-#   pull_request:
-#     types: [closed]
-#     branches: ["main"]
-on: [push]
+on:
+  workflow_run:
+    workflows: ["Release"]
+    types:
+      - completed
 
 jobs:
-  release:
-    name: Release latest version
-    runs-on: ubuntu-latest
-    outputs:
-      release_body: ${{ steps.git-cliff.outputs.content }}
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
-
-      - name: Install PDM
-        run: pip install pdm
-      - name: Install ci dependencies
-        run: pdm install -G ci
-
-      # - name: Generate changelog
-      #   id: git-cliff
-      #   run: |
-      #     pdm run git-cliff --verbose --bump -o CHANGELOG.md
-      - name: Set tag env variable
-        run: echo "NEW_TAG=$(pdm run git-cliff --bumped-version)" >> $GITHUB_ENV
-
-      # - name: Commit to main
-      #   run: |
-      #     git checkout main
-      #     git config user.name github-actions
-      #     git config user.email github-actions@github.com
-      #     git add CHANGELOG.md
-      #     git commit -m "Update changelog"
-      #     git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
-      - name: Upload the release
-        uses: softprops/action-gh-release@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: ${{ env.NEW_TAG }}
-          generate_release_notes: true
-
   release-build:
     runs-on: ubuntu-latest
-    needs:
-      - release
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.workflow_run.head_branch }}
           fetch-depth: 0
 
       - name: Set up Python
