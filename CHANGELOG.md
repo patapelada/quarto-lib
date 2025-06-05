@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.7] - 2025-06-05
+
+### ⚙️ Miscellaneous Tasks
+
+- Semver changelog commit message
+- Specify release workflow entry points
+
 ## [2.1.6] - 2025-06-05
 
 ### 🐛 Bug Fixes
