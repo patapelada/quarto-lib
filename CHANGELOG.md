@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 - *(ci)* Only test against 3.13
 - *(ci)* Remove pdm check
 - Release workflow
+- Release workflow
 
 ### 🧪 Testing
 
