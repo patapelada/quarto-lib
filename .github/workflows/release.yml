@@ -43,7 +43,7 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add CHANGELOG.md
-          git commit -m "Update changelog"
+          git commit -m "chore: update changelog for release ${{ env.NEW_TAG }}"
           git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
       - name: Upload the release
         uses: softprops/action-gh-release@v2
