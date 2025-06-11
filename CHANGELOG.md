@@ -2,12 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0] - 2025-06-11
+
+### 🚀 Features
+
+- Adds turn enum
+
 ## [2.1.7] - 2025-06-05
 
 ### ⚙️ Miscellaneous Tasks
 
 - Semver changelog commit message
 - Specify release workflow entry points
+- Update changelog for release v2.1.7
 
 ## [2.1.6] - 2025-06-05
 
