@@ -2,6 +2,7 @@ from typing import Literal, Optional
 
 from quarto_lib.types.cell import Cell
 from quarto_lib.types.piece import Piece
+from quarto_lib.types.turn import Turn
 from quarto_lib.utils import common_characteristics
 
 
@@ -9,7 +10,7 @@ class Game:
     def __init__(self):
         self._board: list[list[Optional[Piece]]] = [[None for _ in range(4)] for _ in range(4)]
         self._current_player: Literal[0, 1] = 0  # 0 for player 1, 1 for player 2
-        self._current_turn: Literal[0, 1] = 0  # 0 for choice, 1 for placement
+        self._current_turn: Turn = Turn.CHOICE
         self._chosen_piece: Optional[Piece] = None
         self._move_history: list[tuple[Piece, Cell]] = []
         self._game_over = False
@@ -25,7 +26,7 @@ class Game:
         return self._current_player
 
     @property
-    def current_turn(self) -> Literal[0, 1]:
+    def current_turn(self) -> Turn:
         return self._current_turn
 
     @property
@@ -99,7 +100,7 @@ class Game:
     def choose_piece(self, piece: Piece):
         if self._game_over:
             raise ValueError("The game is already over.")
-        if self._current_turn != 0:
+        if self._current_turn != Turn.CHOICE:
             raise ValueError("It's not the choice turn.")
         if piece not in self.available_pieces:
             raise ValueError("Piece is not available.")
@@ -107,13 +108,13 @@ class Game:
             raise ValueError("A piece has already been chosen.")
 
         self._chosen_piece = piece
-        self._current_turn = 1
+        self._current_turn = Turn.PLACEMENT
         self._current_player = 1 - self._current_player
 
     def place_piece(self, cell: Cell):
         if self._game_over:
             raise ValueError("The game is already over.")
-        if self._current_turn != 1:
+        if self._current_turn != Turn.PLACEMENT:
             raise ValueError("It's not the placement turn.")
         row, col = cell.row, cell.col
         if self._board[row][col] is not None:
@@ -122,7 +123,7 @@ class Game:
             raise ValueError("No piece has been chosen.")
 
         self._board[row][col] = self._chosen_piece
-        self._current_turn = 0
+        self._current_turn = Turn.CHOICE
         self._move_history.append((self._chosen_piece, cell))
         self._chosen_piece = None
 
