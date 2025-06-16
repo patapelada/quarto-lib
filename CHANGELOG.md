@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.2.0] - 2025-06-16
+
+### 🚀 Features
+
+- Adds identifier prop to quarto agent interface
+
 ## [3.1.2] - 2025-06-16
 
 ### 🐛 Bug Fixes
 
 - *(utils)* Get_available_cells
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for release v3.1.2
 
 ## [3.1.1] - 2025-06-16
 
