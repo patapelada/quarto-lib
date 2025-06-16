@@ -1,6 +1,30 @@
-from typing import List, Optional, Sequence, Tuple
+from typing import List, Optional, Sequence, Set, Tuple
 
+from quarto_lib.contracts.models import GameState
+from quarto_lib.types.cell import Cell
 from quarto_lib.types.piece import Piece
+
+
+def get_available_pieces(game: GameState) -> Set[Piece]:
+    pieces = set(Piece)
+    pieces.discard(game.current_piece)
+    for row in game.board:
+        for piece in row:
+            if piece is not None:
+                pieces.discard(piece)
+
+    return pieces
+
+
+def get_available_cells(game: GameState) -> Set[Cell]:
+    available_cells = set(Cell)
+    for row in game.board:
+        for piece in row:
+            if piece is None:
+                cell = Cell(row.index(piece), game.board.index(row))
+                available_cells.discard(cell)
+
+    return available_cells
 
 
 def common_characteristics(line: Sequence[Optional[Piece]]) -> List[Tuple[int, int]]:
@@ -50,4 +74,4 @@ def piece_to_parts(piece: Piece) -> Tuple[str, str, bool, str, str]:
         char = "■" if fill == 0 else "□"
     prefix, suffix = ("⌈", "⌉") if height else (" ", " ")
     template = "{prefix}{char}{suffix}"
-    return char, template, color, prefix, suffix
+    return char, template, bool(color), prefix, suffix

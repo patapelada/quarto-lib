@@ -1,4 +1,4 @@
-from .game_state import GameState
-from .informal_agent_interface import InformalAgentInterface
+from .models import GameState
+from .quarto_agents import QuartoAgent
 
-__all__ = ["GameState", "InformalAgentInterface"]
+__all__ = ["GameState", "QuartoAgent"]

@@ -1,12 +1,7 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class Piece(Enum):
-    def __new__(cls, value: int):
-        obj = object.__new__(cls)
-        obj._value_ = value
-        return obj
-
+class Piece(IntEnum):
     LRTS = 0b0000
     LRTH = 0b0001
     LRSS = 0b0010

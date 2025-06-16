@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class Turn(Enum):
+class Turn(IntEnum):
     CHOICE = 0
     PLACEMENT = 1

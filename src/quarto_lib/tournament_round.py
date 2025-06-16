@@ -1,9 +1,9 @@
 from quarto_lib.arena import Arena
-from quarto_lib.contracts.informal_agent_interface import InformalAgentInterface
+from quarto_lib.contracts.quarto_agents import QuartoAgent
 
 
 class TournamentRound:
-    def __init__(self, agent1: InformalAgentInterface, agent2: InformalAgentInterface, best_of: int = 1):
+    def __init__(self, agent1: QuartoAgent, agent2: QuartoAgent, best_of: int = 1):
         if best_of < 1 or best_of % 2 == 0:
             raise ValueError("best_of must be a positive odd integer.")
         self.best_of = best_of
