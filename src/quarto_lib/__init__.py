@@ -1,7 +1,7 @@
 from importlib.metadata import PackageNotFoundError, version
 
 from quarto_lib.arena import Arena
-from quarto_lib.contracts.models import ChooseInitialPieceResponse, CompleteTurnResponse, GameState
+from quarto_lib.contracts.models import Board, ChooseInitialPieceResponse, CompleteTurnResponse, GameState
 from quarto_lib.contracts.quarto_agents import QuartoAgent
 from quarto_lib.game import Game
 from quarto_lib.tournament_round import TournamentRound
@@ -27,6 +27,7 @@ __all__ = [
     "Arena",
     "Game",
     "TournamentRound",
+    "Board",
     "Cell",
     "Piece",
     "Turn",

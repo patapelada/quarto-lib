@@ -7,8 +7,11 @@ from quarto_lib.types.piece import Piece
 
 
 class GameState(BaseModel):
-    board: List[List[Optional[Piece]]]
+    board: "Board"
     current_piece: Piece
+
+
+type Board = List[List[Optional[Piece]]]
 
 
 class CompleteTurnResponse(BaseModel):

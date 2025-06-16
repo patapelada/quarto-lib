@@ -1,5 +1,6 @@
 from typing import Literal, Optional
 
+from quarto_lib.contracts.models import Board
 from quarto_lib.types.cell import Cell
 from quarto_lib.types.piece import Piece
 from quarto_lib.types.turn import Turn
@@ -8,7 +9,7 @@ from quarto_lib.utils import common_characteristics
 
 class Game:
     def __init__(self):
-        self._board: list[list[Optional[Piece]]] = [[None for _ in range(4)] for _ in range(4)]
+        self._board: Board = [[None for _ in range(4)] for _ in range(4)]
         self._current_player: Literal[0, 1] = 0  # 0 for player 1, 1 for player 2
         self._current_turn: Turn = Turn.CHOICE
         self._chosen_piece: Optional[Piece] = None
@@ -30,7 +31,7 @@ class Game:
         return self._current_turn
 
     @property
-    def board(self) -> list[list[Optional[Piece]]]:
+    def board(self) -> Board:
         return [row[:] for row in self._board]
 
     @property

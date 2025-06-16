@@ -1,6 +1,6 @@
 from typing import List, Optional, Sequence, Set, Tuple
 
-from quarto_lib.contracts.models import GameState
+from quarto_lib.contracts.models import Board, GameState
 from quarto_lib.types.cell import Cell
 from quarto_lib.types.piece import Piece
 
@@ -39,7 +39,7 @@ def common_characteristics(line: Sequence[Optional[Piece]]) -> List[Tuple[int, i
     return results
 
 
-def get_all_lines(board: List[List[Optional[Piece]]]) -> List[List[Optional[Piece]]]:
+def get_all_lines(board: Board) -> List[List[Optional[Piece]]]:
     lines: List[List[Optional[Piece]]] = []
 
     for i in range(4):
@@ -52,7 +52,7 @@ def get_all_lines(board: List[List[Optional[Piece]]]) -> List[List[Optional[Piec
     return lines
 
 
-def check_win(board: List[List[Optional[Piece]]]) -> bool:
+def check_win(board: Board) -> bool:
     for line in get_all_lines(board):
         line_pieces = [piece for piece in line if piece is not None]
         if len(line_pieces) == 4 and common_characteristics(line_pieces):
