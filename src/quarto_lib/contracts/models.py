@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Literal, Optional
 
 from pydantic import BaseModel
 
@@ -21,3 +21,8 @@ class CompleteTurnResponse(BaseModel):
 
 class ChooseInitialPieceResponse(BaseModel):
     piece: Piece
+
+
+class AgentHealthResponse(BaseModel):
+    status: Literal["ok", "nok"]
+    identifier: str
