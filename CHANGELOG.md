@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0] - 2025-06-16
+
+### 🚀 Features
+
+- [**breaking**] Simplified interface
+
 ## [2.2.0] - 2025-06-11
 
 ### 🚀 Features
 
 - Adds turn enum
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for release v2.2.0
 
 ## [2.1.7] - 2025-06-05
 
