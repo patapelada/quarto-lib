@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.1] - 2025-06-16
+
+### 🐛 Bug Fixes
+
+- Game state creation
+
 ## [3.1.0] - 2025-06-16
 
 ### 🚀 Features
 
 - Introduce Board type
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for release v3.1.0
 
 ## [3.0.0] - 2025-06-16
 
