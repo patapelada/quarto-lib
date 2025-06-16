@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.3.1] - 2025-06-16
+
+### 🐛 Bug Fixes
+
+- Export AgentHealthResponse
+
 ## [3.3.0] - 2025-06-16
 
 ### 🚀 Features
 
 - *(contract)* Add AgentHealthResponse
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for release v3.3.0
 
 ## [3.2.0] - 2025-06-16
 
