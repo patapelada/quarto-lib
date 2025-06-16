@@ -33,10 +33,13 @@ class Arena:
                 continue
 
             # If not fresh, proceed with the turn
+            current_piece = self.game.current_piece
+            if current_piece is None:
+                raise ValueError("Current piece cannot be None at this stage of the game.")
             if self.game.current_player == 0:
-                response = self.agent1.complete_turn(GameState.from_game(self.game))
+                response = self.agent1.complete_turn(GameState(board=self.game.board, current_piece=current_piece))
             else:
-                response = self.agent2.complete_turn(GameState.from_game(self.game))
+                response = self.agent2.complete_turn(GameState(board=self.game.board, current_piece=current_piece))
 
             logger.debug(f"Player {self.game.current_player} placed piece {response.piece} at cell {response.cell}")
             self.game.place_piece(response.cell)
