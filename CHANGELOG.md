@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.1.0] - 2025-06-16
+
+### 🚀 Features
+
+- Introduce Board type
+
 ## [3.0.0] - 2025-06-16
 
 ### 🚀 Features
 
 - [**breaking**] Simplified interface
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for release v3.0.0
 
 ## [2.2.0] - 2025-06-11
 
