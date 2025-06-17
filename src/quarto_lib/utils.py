@@ -17,14 +17,7 @@ def get_available_pieces(game: GameState) -> Set[Piece]:
 
 
 def get_available_cells(game: GameState) -> Set[Cell]:
-    available_cells = set(
-        [
-            Cell(row, col)
-            for row in range(len(game.board))
-            for col in range(len(game.board[row]))
-            if game.board[row][col] is None
-        ]
-    )
+    available_cells = set([cell for cell in Cell if game.board[cell.row][cell.col] is None])
     return available_cells
 
 
