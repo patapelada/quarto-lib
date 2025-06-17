@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.0] - 2025-06-17
+
+### 🚀 Features
+
+- [**breaking**] Change cell enum to IntEnum
+
 ## [3.3.1] - 2025-06-16
 
 ### 🐛 Bug Fixes
 
 - Export AgentHealthResponse
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for release v3.3.1
 
 ## [3.3.0] - 2025-06-16
 
