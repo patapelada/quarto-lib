@@ -13,16 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      - name: Set up PDM
+        uses: pdm-project/setup-pdm@v4
         with:
           python-version: ${{ matrix.python-version }}
+          cache: true
+          cache-dependency-path: "**/pdm.lock"
 
-      - name: Install PDM
-        run: pip install pdm
       - name: Install dependencies
         run: |
-          pdm install
+          pdm sync
 
       - name: Run tests
         run: pdm test --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml

@@ -21,15 +21,16 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up PDM
+        uses: pdm-project/setup-pdm@v4
         with:
           python-version: "3.13"
+          cache: true
+          cache-dependency-path: "**/pdm.lock"
 
-      - name: Install PDM
-        run: pip install pdm
-      - name: Install ci dependencies
-        run: pdm install -G ci
+      - name: Install dependencies
+        run: |
+          pdm sync -G ci
 
       - name: Generate changelog
         id: git-cliff
