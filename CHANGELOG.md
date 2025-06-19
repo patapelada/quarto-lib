@@ -2,11 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.1] - 2025-06-19
+
+### 🐛 Bug Fixes
+
+- *(ci)* Use setup-pdm
+
 ## [4.0.0] - 2025-06-17
 
 ### 🚀 Features
 
 - [**breaking**] Change cell enum to IntEnum
+
+### ⚙️ Miscellaneous Tasks
+
+- Update changelog for release v4.0.0
 
 ## [3.3.1] - 2025-06-16
 
